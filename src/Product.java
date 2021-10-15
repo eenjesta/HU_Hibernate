@@ -10,11 +10,11 @@ public class Product {
     private String naam;
     private String beschrijving;
     private double prijs;
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(cascade = { CascadeType.ALL }, fetch = FetchType.EAGER)
     @JoinTable(
             name = "ov_chipkaart_product",
             joinColumns = { @JoinColumn(name = "product_nummer") },
-            inverseJoinColumns = { @JoinColumn(name = "kaart_nummer") }
+            inverseJoinColumns = { @JoinColumn(name = "kaart_nummer")}
     )
     private List<OVChipkaart> ov_chipkaarten = new ArrayList<>();
 

@@ -16,7 +16,7 @@ public class Reiziger {
     @OneToOne(mappedBy = "reiziger")
     private Adres adres;
 
-    @OneToMany(mappedBy="reiziger")
+    @OneToMany(mappedBy="reiziger", fetch = FetchType.EAGER)
     private List<OVChipkaart> ov_chipkaarten = new ArrayList<>();
 
     public Reiziger(){};
